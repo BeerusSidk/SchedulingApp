@@ -19,7 +19,8 @@ maven-build:
 maven-test:             
    stage: maventest     # one of the stages listed above
    tags:
-     - duckhoi_tag-tag   # change to your runner's tag
+     - duckhoi_tag   # change to your runner's tag
+     -mvn-deploy-tag
    script:
      - cd Backend       # change 'Backend' to to where you have the pom.xml (do not add / in the beginning)
      - mvn test         # maven test
@@ -27,7 +28,8 @@ maven-test:
 auto-deploy:
   stage: mavendeploy    # one of the stages listed above
   tags:
-  - duckhoi_tag-tag      # change to your runner's tag
+  - mvn-deploy-tag      # change to your runner's tag
+  - duckhoi_tag
   script:               # script to run the deployment service you created
     - cd Backend        # change 'Backend' to to where you have the pom.xml (do not add / in the beginning)
     - ls ./target/
