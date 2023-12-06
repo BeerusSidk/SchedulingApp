@@ -19,7 +19,7 @@ maven-build:
 maven-test:             
    stage: maventest     # one of the stages listed above
    tags:
-     - mvn-deploy-tag   # change to your runner's tag
+     - duckhoi-tag   # change to your runner's tag
    script:
      - cd Backend       # change 'Backend' to to where you have the pom.xml (do not add / in the beginning)
      - mvn test         # maven test
